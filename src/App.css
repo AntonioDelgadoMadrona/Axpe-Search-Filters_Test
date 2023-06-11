@@ -1,0 +1,35 @@
+.App {
+  padding: 0;
+  margin: 0;
+}
+
+.App header {
+  width: 100vw;
+  height: 100px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+main {
+  width: 60vw;
+  margin: 0 auto;
+  text-align: center;
+  height: 60vh;
+}
+
+footer {
+  width: 60vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  height: 3em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}

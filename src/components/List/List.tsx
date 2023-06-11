@@ -1,23 +1,23 @@
+// CONTEXT
+import { useAppContext } from "../../context/AppContext";
 // STYLES
 import "./List.css";
 
 export function List() {
-  const elements = [
-    { country: "Spain", version: "Development", text: "Spain Development" },
-    { country: "Spain", version: "Stage", text: "Spain Stage" },
-    { country: "Spain", version: "Production", text: "Spain Production" },
-    { country: "France", version: "Development", text: "France Development" },
-    { country: "France", version: "Stage", text: "France Stage" },
-    { country: "France", version: "Production", text: "France Production" },
-    { country: "Germany", version: "Development", text: "Germany Development" },
-    { country: "Germany", version: "Stage", text: "Germany Stage" },
-    { country: "Germany", version: "Production", text: "Germany Production" },
-  ];
+  const { elements, filters } = useAppContext();
+
+  const filteredElements = elements.filter((element) => {
+    const textMatch = element.text.toLowerCase().includes(filters.text.toLowerCase());
+    const countryMatch = element.country === filters.country || filters.country === "all";
+    const versionMatch = element.version === filters.version || filters.version === "all";
+    return textMatch && countryMatch && versionMatch;
+  });
+
   return (
     <div className="List">
       <h3>List</h3>
       <div className="list_ul">
-        {elements.map((element) => {
+        {filteredElements.map((element) => {
           return (
             <div key={element.text}>
               <p>

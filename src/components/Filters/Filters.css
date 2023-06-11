@@ -35,6 +35,8 @@
 .filters_2 button span {
   color: darkcyan;
   font-weight: 700;
+  font-size: 18px;
+  margin-left: 5px;
 }
 
 .filters_3 {

@@ -1,0 +1,25 @@
+.list_ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  row-gap: 10px;
+}
+
+.list_ul > div {
+  width: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  column-gap: 10px;
+  background-color: #ffffff;
+  padding: 10px 20px;
+}
+
+.list_ul > div p {
+  margin-bottom: 0;
+}
+
+.list_ul > div span {
+  font-weight: bold;
+}

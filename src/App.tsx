@@ -2,6 +2,9 @@
 import reactLogo from "/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+// COMPONENTS
+import { Filters } from "./components/Filters/Filters";
+import { List } from "./components/List/List";
 
 function App() {
   return (
@@ -11,8 +14,8 @@ function App() {
       </header>
 
       <main>
-        <h3>Filters</h3>
-        <h3>List</h3>
+        <Filters />
+        <List />
       </main>
 
       <footer>

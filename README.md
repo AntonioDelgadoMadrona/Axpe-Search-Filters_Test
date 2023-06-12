@@ -1,5 +1,7 @@
 Axpe_SearchFilters_Test
 
+![Alt text](./public/vite_react.png)
+
 DEFINITION
 
 I have used to assemble the project with Vite + React, TypeScript, Vitest, Testing Library...

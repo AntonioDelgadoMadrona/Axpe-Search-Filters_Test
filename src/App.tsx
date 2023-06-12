@@ -3,11 +3,11 @@ import reactLogo from "/react.svg";
 import viteLogo from "/vite.svg";
 import tsLogo from "/ts.svg";
 import "./App.css";
+// CONTEXT
+import { AppProvider } from "./context/AppContext";
 // COMPONENTS
 import { Filters } from "./components/Filters/Filters";
 import { List } from "./components/List/List";
-// CONTEXT
-import { AppProvider } from "./context/AppContext";
 
 function App() {
   return (

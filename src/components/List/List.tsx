@@ -17,21 +17,15 @@ export function List() {
     <div className="List">
       <h3>List</h3>
       <div className="list_ul">
-        {filteredElements.map((element) => {
-          return (
-            <div key={element.text}>
-              <p>
-                <span>Country:</span> {element.country}
+        {filteredElements.map((element) => (
+          <div key={element.text}>
+            {Object.keys(element).map((key) => (
+              <p key={element[key]}>
+                <span>{key}:</span> {element[key]}
               </p>
-              <p>
-                <span>Version:</span> {element.version}
-              </p>
-              <p>
-                <span>Text:</span> {element.text}
-              </p>
-            </div>
-          );
-        })}
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

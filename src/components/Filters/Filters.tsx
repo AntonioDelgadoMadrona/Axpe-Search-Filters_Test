@@ -4,7 +4,11 @@ import { useAppContext } from "../../context/AppContext";
 import "./Filters.css";
 
 export function Filters() {
-  const { filters, setFilters, displayValues, resetFilters } = useAppContext();
+  const { filters, setFilters, displayValues, resetFilters, elements } = useAppContext();
+
+  // CREATE ARRAYS OF UNIQUE VALUES
+  const countries = [...new Set(elements.map((element) => element.country))];
+  const versions = [...new Set(elements.map((element) => element.version))];
 
   return (
     <div className="Filters">
@@ -15,21 +19,27 @@ export function Filters() {
           name="country"
           value={filters.country}
           onChange={({ target }) => setFilters((prevFilters) => ({ ...prevFilters, [target.name]: target.value }))}
+          data-testid="select-country"
         >
           <option value="all">Country</option>
-          <option value="Spain">Spain</option>
-          <option value="France">France</option>
-          <option value="Germany">Germany</option>
+          {countries.map((country) => (
+            <option key={country} value={country}>
+              {country}
+            </option>
+          ))}
         </select>
         <select
           name="version"
           value={filters.version}
           onChange={({ target }) => setFilters((prevFilters) => ({ ...prevFilters, [target.name]: target.value }))}
+          data-testid="select-version"
         >
           <option value="all">Version</option>
-          <option value="Development">Development</option>
-          <option value="Stage">Stage</option>
-          <option value="Production">Production</option>
+          {versions.map((version) => (
+            <option key={version} value={version}>
+              {version}
+            </option>
+          ))}
         </select>
         <button onClick={() => resetFilters()}>Clear all filters</button>
       </div>
